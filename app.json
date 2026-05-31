@@ -1,24 +1,43 @@
 {
   "expo": {
-    "name": "english-talker-app",
+    "name": "English Talk",
     "slug": "english-talker-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B1121",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Allow English Talker to use speech recognition.",
+        "NSMicrophoneUsageDescription": "Allow English Talker to access your microphone."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0B1121",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": [
+        "RECORD_AUDIO",
+        "INTERNET"
+      ],
+      "package": "com.englishtalker.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow English Talker to use the microphone.",
+          "speechRecognitionPermission": "Allow English Talker to use speech recognition."
+        }
+      ]
+    ]
   }
 }
